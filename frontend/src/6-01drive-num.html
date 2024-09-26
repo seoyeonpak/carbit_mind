@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>차량별 주행 횟수</title>
+    <link rel="stylesheet" href="css/6-01drive-num.css">
+</head>
+<body>
+    <!--header-->
+    <header>
+        <a href="2-menubar.html">
+            <p>≡</p>
+        </a>
+        <a href="1-main_login.html">
+            <img src="img/logo.png" alt="아이커넥트" class="logo">
+        </a>
+        <div>
+            <a href="10-1mypage.html">
+                <img src="img/프로필.png" alt="프로필" class="profile">
+            </a>
+            <a href="1-main.html">
+                <button class="logout">로그아웃</button>
+            </a>
+        </div>
+    </header>
+
+    <!--차량별 주행 횟수-->
+    <div class="drive-num">
+        <div class="title">
+            <p>차량별 주행 횟수</p>
+        </div>
+    </div>
+
+    <!--검색-->
+    <div class="serch">
+        <p>차량번호</p>
+        <input type="text" name="serch" id="serch" placeholder="11가 1234">
+        <a href="6-01drive-num.html">
+            <img src="img/serch.png" alt="검색" class="serch-img">
+        </a>
+    </div>
+
+    <!--날짜-->
+    <div class="date">
+        <div class="date-nav">
+            <button class="slide-button">&lt;</button>
+            <span class="date-display">2024. 06. 28&nbsp;
+                <img src="img/date.png" alt="달력">
+            </span>
+            <button class="slide-button">&gt;</button>
+        </div>
+        
+        <div class="tab-menu">
+            <button class="tab-active">일간</button>
+            <a href="#">
+                <button class="tab">주간</button>
+            </a>
+            <a href="#">
+                <button class="tab">월간</button>
+            </a>
+        </div>
+    </div>
+
+    <!--결과창-->
+    <div class="result">
+        <div class="select">
+            <div class="check">
+                <span class="step-icon">✔</span>
+            </div>
+            </a>
+            <p>차트</p>
+            <a href="6-02drive-num.html">
+                <div class="no-check">
+                    <span class="step-icon">✔</span>
+                </div>
+            </a>
+            <p>표</p>
+        </div>
+        <img src="img/chart.png" alt="chart" class="chart">
+    </div>
+</body>
+</html>

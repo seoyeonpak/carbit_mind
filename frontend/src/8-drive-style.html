@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>차량별 운전 스타일 확인</title>
+    <link rel="stylesheet" href="css/8-drive-style.css">
+</head>
+<body>
+    <!--header-->
+    <header>
+        <a href="2-menubar.html">
+            <p>≡</p>
+        </a>
+        <a href="1-main_login.html">
+            <img src="img/logo.png" alt="아이커넥트" class="logo">
+        </a>
+        <div>
+            <a href="10-1mypage.html">
+                <img src="img/프로필.png" alt="프로필" class="profile">
+            </a>
+            <a href="1-main.html">
+                <button class="logout">로그아웃</button>
+            </a>
+        </div>
+    </header>
+
+    <!--차량별 운전 스타일 확인-->
+    <div class="drive-style">
+        <div class="title">
+            <p>차량별 운전 스타일 확인</p>
+        </div>
+    </div>
+
+    <!--검색-->
+    <div class="serch">
+        <p>차량번호</p>
+        <input type="text" name="serch" id="serch" placeholder="11가 1234">
+        <a href="8-drive-style.html">
+            <img src="img/serch.png" alt="검색" class="serch-img">
+        </a>
+    </div>
+
+    <!--날짜-->
+    <div class="date">
+        <div class="date-nav">
+            <button class="slide-button">&lt;</button>
+            <span class="date-display">2024. 06. 28&nbsp;
+                <img src="img/date.png" alt="달력">
+            </span>
+            <button class="slide-button">&gt;</button>
+        </div>
+        
+        <div class="tab-menu">
+            <button class="tab-active">일간</button>
+            <a href="#">
+                <button class="tab">주간</button>
+            </a>
+            <a href="#">
+                <button class="tab">월간</button>
+            </a>
+        </div>
+    </div>
+
+    <!--결과-->
+    <div class="result">
+        <!--점수-->
+        <div class="score">
+            <img src="img/dashboard.png " alt="dashboard">
+            <p>점수 : 92점</p>
+            <p>상태 : 양호</p>
+        </div>
+    
+        <!--내용-->
+        <div class="content">
+            <table>
+                <tr>
+                    <td>평균 주행속도</td>
+                    <td>84 km/h</td>
+                </tr>
+                <tr>
+                    <td>과속 횟수</td>
+                    <td>1회</td>
+                </tr>
+                <tr>
+                    <td>급가속 횟수</td>
+                    <td>0회</td>
+                </tr>
+                <tr>
+                    <td>급감속 횟수</td>
+                    <td>1회</td>
+                </tr>
+                <tr>
+                    <td>급차선이동 횟수</td>
+                    <td>3회</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

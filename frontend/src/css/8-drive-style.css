@@ -1,0 +1,219 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fdfdfd;
+    margin: 0;
+    padding: 0;
+}
+
+/*헤더*/
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin: -10px 0;
+    background-color: white;
+    box-shadow: 0 3px 1px #0000001a;
+}
+
+header p{
+    font-size: 42px;
+    color: #afafaf;
+    padding: 0;
+    margin: 0;
+    margin-top: -5px;
+    margin-bottom: -20px;
+    margin-left: 15px;
+    margin-right: 6.4em;
+}
+
+header a{
+    text-decoration: none;
+}
+
+.logo{
+    width: 50%;
+    margin-top: 10px;
+}
+
+.profile{
+    width: 35px;
+    margin-top: 13px;
+    margin-right: 10px;
+    margin-left: -50px;
+}
+
+.logout{
+    font-size: 17px;
+    border-radius: 20px;
+    border: 1px solid #79a2df;
+    color: #79a2df;
+    background-color: #ffffff;
+    float: right;
+    padding: 3px 15px;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+.logout:hover{
+    background-color: #ebebeb;
+}
+
+/*차량별 운전 스타일 확인*/
+.drive-style{
+    margin-top: 45px;
+}
+
+.title{
+    font-size: 22px;
+    font-weight: 550;
+    margin-left: 120px;
+}
+
+/*검색*/
+.serch{
+    display: flex;
+    justify-content: space-around;
+    margin-right: 14em;
+    margin-bottom: 20px;
+}
+
+.serch p{
+    font-size: 20px;
+    font-weight: 545;
+    margin-left: 8em;
+    margin-top: 10px;
+    margin-right: 3em;
+}
+
+input{
+    border: 2px solid #a7cfe2;
+    border-radius: 7px;
+    width: 100em;
+    height: 45px;
+    text-align: center;
+    color: #79a2df;
+}
+
+input::placeholder {
+    color: #bbc5ce;
+    font-size: 17px;
+}
+
+input:focus {outline:none;}  /*클릭 시 테두리 x*/
+
+.serch-img{
+    margin-right: -5em;
+    height: 50px;
+}
+
+/*날짜*/
+.date{
+    display: flex;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+.date-nav{
+    padding: 0 52em;
+}
+
+.slide-button {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    margin-left: -15px;
+}
+
+.date-display {
+    font-size: 20px;
+    font-weight: 550;
+    color: #333;
+    padding: 0 40px;
+}
+
+.date-display img{
+    height: 17px;
+}
+
+.tab-menu {
+    margin-left: -26em;
+    margin-bottom: 20px;
+}
+
+.tab-menu a{
+    text-decoration-line: none;
+}
+
+.tab {
+    background-color: #f0f0f0;
+    color: #bbbbbb;
+    border: none;
+    padding: 1px 20px;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.tab-active {
+    background-color: #79a2df;
+    color: white;
+    border: none;
+    padding: 1px 20px;
+    border-radius: 25px;
+    font-size: 18px;
+}
+
+/*결과*/
+.result{
+    display: flex;
+    text-align: center;
+    margin: 0 11em;
+}
+
+/*점수*/
+.score{
+    width: 28%;
+    background-color: #d8ecf8;
+    border-radius: 10px;
+    padding: 22px 40px;
+    margin-left: 20px;
+}
+
+.score img{
+    width: 82%;
+    margin-top: 5em;
+    margin-bottom: 15px;
+}
+
+.score p{
+    font-size: 36px;
+}
+
+/*내용*/
+.content{
+    width: 61%;
+    text-align: center;
+    margin-left: 40px;
+    border-radius: 10px;
+    border: 1px solid #383838;
+}
+
+table{
+    text-align: center;
+    width: 85%;
+    margin: 1.5em 5em;
+}
+
+td {
+    border-bottom: 2px solid #f1f1f1;
+    padding: 30px;
+    font-size: 27px;
+}
+
+tr:last-child td{
+    border-bottom: none;
+}

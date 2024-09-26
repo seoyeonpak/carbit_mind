@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>차량별 주행 기록 확인</title>
+    <link rel="stylesheet" href="css/9-02drive-record.css">
+</head>
+<body>
+    <!--팝업창-->
+    <div class="popup_title">
+        <p>주행 기록 상세보기</p>
+        <p><a href="9-01drive-record.html">X</a></p>
+    </div>
+    <div class="popup">
+        <img src="img/map9-02.png" alt="map_img" class="map_img">
+    </div>
+
+    <!--header-->
+    <div class="background">
+        <header>
+            <a href="2-menubar.html">
+                <p>≡</p>
+            </a>
+            <a href="1-main_login.html">
+                <img src="img/logo.png" alt="아이커넥트" class="logo">
+            </a>
+            <div>
+                <a href="10-1mypage.html">
+                    <img src="img/프로필.png" alt="프로필" class="profile">
+                </a>
+                <a href="1-main.html">
+                    <button class="logout">로그아웃</button>
+                </a>
+            </div>
+        </header>
+    
+        <!--차량별 주행 기록 확인-->
+        <div class="drive-record">
+            <div class="title">
+                <p>차량별 주행 기록 확인</p>
+            </div>
+        </div>
+    
+        <!--검색-->
+        <div class="serch">
+            <p>차량번호</p>
+            <input type="text" name="serch" id="serch" placeholder="11가 1234">
+            <a href="8-drive-style.html">
+                <img src="img/serch.png" alt="검색" class="serch-img">
+            </a>
+        </div>
+    
+        <!--날짜-->
+        <div class="date">
+            <div class="date-nav">
+                <button class="slide-button">&lt;</button>
+                <span class="date-display">2024. 06. 28&nbsp;
+                    <img src="img/date.png" alt="달력">
+                </span>
+                <button class="slide-button">&gt;</button>
+            </div>
+            
+            <div class="tab-menu">
+                <button class="tab-active">일간</button>
+                <a href="#">
+                    <button class="tab">주간</button>
+                </a>
+                <a href="#">
+                    <button class="tab">월간</button>
+                </a>
+            </div>
+        </div>
+    
+        <!--기록-->
+        <div class="record">
+            <div class="content">
+                <p>총 주행횟수</p>
+                <p>6회</p>
+            </div>
+            <div class="content">
+                <p>총 주행거리</p>
+                <p>13km</p>
+            </div>
+            <div class="content">
+                <p>총 주행시간</p>
+                <p>1시간 4분</p>
+            </div>
+        </div>
+    
+        <!--표-->
+        <table>
+            <thead>
+                <tr>
+                    <th>NO</th>
+                    <th>출발지</th>
+                    <th>도착지</th>
+                    <th>주행시간 (소요시간)</th>
+                    <th>총 운전거리</th>
+                    <th>이슈발생</th>
+                    <th>지도</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>대구 북구 대학로 80, 경북대학교</td>
+                    <td>대구 동구 동대구로 550 동대구역</td>
+                    <td>09:40 - 09:49 (9분 소요)</td>
+                    <td>2.1km</td>
+                    <td>3</td>
+                    <td><a href="9-02drive-record.html">지도</a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>대구 북구 호암로 51, 대구삼성창조캠퍼스</td>
+                    <td>대구 동구 동대구로 550 동대구역</td>
+                    <td>09:40 - 09:49 (9분 소요)</td>
+                    <td>2.1km</td>
+                    <td>2</td>
+                    <td><a href="9-02drive-record.html">지도</a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>대구 서구 와룡로 527, 서대구역</td>
+                    <td>대구 동구 동대구로 550 동대구역</td>
+                    <td>07:40 - 07:49 (9분 소요)</td>
+                    <td>2.1km</td>
+                    <td>1</td>
+                    <td><a href="9-02drive-record.html">지도</a></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>대구 중구 달구벌대로 2077, 더현대대구</td>
+                    <td>대구 동구 동대구로 550 동대구역</td>
+                    <td>06:40 - 06:49 (9분 소요)</td>
+                    <td>2.1km</td>
+                    <td>0</td>
+                    <td><a href="9-02drive-record.html">지도</a></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>대구 달서구 두류공원로 200, 이월드</td>
+                    <td>대구 동구 동대구로 550 동대구역</td>
+                    <td>06:40 - 06:49 (9분 소요)</td>
+                    <td>2.1km</td>
+                    <td>0</td>
+                    <td><a href="9-02drive-record.html">지도</a></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>대구 남구 얼배로 496, 대구서부정류장</td>
+                    <td>대구 동구 동대구로 550 동대구역</td>
+                    <td>06:40 - 06:49 (9분 소요)</td>
+                    <td>2.1km</td>
+                    <td>1</td>
+                    <td><a href="9-02drive-record.html">지도</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

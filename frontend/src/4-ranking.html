@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>운행 순위 확인</title>
+    <link rel="stylesheet" href="css/4-ranking.css">
+</head>
+<body>
+    <!--header-->
+    <header>
+        <a href="2-menubar.html">
+            <p>≡</p>
+        </a>
+        <a href="1-main_login.html">
+            <img src="img/logo.png" alt="아이커넥트" class="logo">
+        </a>
+        <div>
+            <a href="10-1mypage.html">
+                <img src="img/프로필.png" alt="프로필" class="profile">
+            </a>
+            <a href="1-main.html">
+                <button class="logout">로그아웃</button>
+            </a>
+        </div>
+    </header>
+
+    <!--운행 순위 확인-->
+    <div class="drive_rank">
+        <div class="title">
+            <p>운행 순위 확인</p>
+        </div>
+    </div>
+    <!--날짜-->
+    <div class="date">
+        <div class="date-nav">
+            <button class="slide-button">&lt;</button>
+            <span class="date-display">2024. 06. 28&nbsp;
+                <img src="img/date.png" alt="달력">
+            </span>
+            <button class="slide-button">&gt;</button>
+        </div>
+        
+        <div class="tab-menu">
+            <button class="tab-active">일간</button>
+            <a href="#">
+                <button class="tab">주간</button>
+            </a>
+            <a href="#">
+                <button class="tab">월간</button>
+            </a>
+        </div>
+    </div>
+    
+    <!--검색-->
+    <div class="serch">
+        <input type="text" name="serch" id="serch" placeholder="검색">
+        <img src="img/serch.png" alt="검색" class="serch-img">
+    </div>
+
+    <!--순위표-->
+    <table>
+        <thead>
+            <tr>
+                <th class="rank">순위</th>
+                <th class="num">차량번호</th>
+                <th class="name">운전자</th>
+                <th class="score">점수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="rank">1</td>
+                <td class="num">11가 1234</td>
+                <td class="name">홍길동</td>
+                <td class="score">92</td>
+            </tr>
+            <tr>
+                <td class="rank">2</td>
+                <td class="num">12가 1234</td>
+                <td class="name">김길동</td>
+                <td class="score">91</td>
+            </tr>
+            <tr>
+                <td class="rank">3</td>
+                <td class="num">13가 1234</td>
+                <td class="name">호길동</td>
+                <td class="score">90</td>
+            </tr>
+            <tr>
+                <td class="rank">4</td>
+                <td class="num">14가 1234</td>
+                <td class="name">이길동</td>
+                <td class="score">89</td>
+            </tr>
+            <tr>
+                <td class="rank">5</td>
+                <td class="num">15가 1234</td>
+                <td class="name">박길동</td>
+                <td class="score">88</td>
+            </tr>
+            <tr>
+                <td class="rank">6</td>
+                <td class="num">16가 1234</td>
+                <td class="name">하길동</td>
+                <td class="score">87</td>
+            </tr>
+            <tr>
+                <td class="rank">7</td>
+                <td class="num">17가 1234</td>
+                <td class="name">윤길동</td>
+                <td class="score">86</td>
+            </tr>
+            <tr>
+                <td class="rank">8</td>
+                <td class="num">18가 1234</td>
+                <td class="name">장길동</td>
+                <td class="score">85</td>
+            </tr>
+            <tr>
+                <td class="rank">9</td>
+                <td class="num">19가 1234</td>
+                <td class="name">유길동</td>
+                <td class="score">84</td>
+            </tr>
+            <tr>
+                <td class="rank">10</td>
+                <td class="num">20가 1234</td>
+                <td class="name">나길동</td>
+                <td class="score">83</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
