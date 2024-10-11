@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메뉴바</title>
     <link rel="stylesheet" href="css/2-menubar.css">
+    <script src="js/favorites_toggle.js" defer></script>
 </head>
 <body>
     <!--header-->
@@ -31,13 +32,17 @@
         <table>
             <tr>
                 <td><img src="img/map_icon2.png" alt="map_icon" class="bar-img"></td>
-                <td><a href="3-all-location.html">실시간 모든 차량 위치 확인</a></td>
-                <td class="star">★</td>
+                <td>
+                    <a href="3-all-location.html">실시간 모든 차량 위치 확인</a>
+                    <button class="star_selected">★</button>
+                </td>
             </tr>
             <tr>
                 <td><img src="img/rank.png" alt="rank" class="bar-img"></td>
-                <td><a href="4-ranking.html">운행 순위 확인</a></td>
-                <td class="star">★</td>
+                <td>
+                    <a href="4-ranking.html">운행 순위 확인</a>
+                    <button class="star_selected">★</button>
+                </td>
             </tr>
         </table>
 
@@ -45,28 +50,39 @@
         <table class="table2">
             <tr>
                 <td><img src="img/map_icon3.png" alt="map_icon" class="bar-img"></td>
-                <td><a href="5-01now-loc.html">현재 위치 확인</a></td>
-                <td class="">☆</td>
+                <td>
+                    <a href="5-01now-loc.html">현재 위치 확인</a>
+                    <button class="star">☆</button>
+                </td>
+                
             </tr>
             <tr>
                 <td><img src="img/전화.png" alt="call" class="bar-img"></td>
-                <td><a href="6-01drive-num.html">차량별 주행 횟수</a></td>
-                <td class="">☆</td>
+                <td>
+                    <a href="6-01drive-num.html">차량별 주행 횟수</a>
+                    <button class="star">☆</button>
+                </td>
             </tr>
             <tr>
                 <td><img src="img/arrow.png" alt="arrow" class="bar-img"></td>
-                <td><a href="7-01drive-route.html">차량별 운전 경로 확인</a></td>
-                <td class="star">★</td>
+                <td>
+                    <a href="7-01drive-route.html">차량별 운전 경로 확인</a>
+                    <button class="star_selected">★</button>
+                </td>
             </tr>
             <tr>
                 <td><img src="img/people.png" alt="people" class="bar-img"></td>
-                <td><a href="8-drive-style.html">차량별 운전 스타일 확인</a></td>
-                <td class="star">★</td>
+                <td>
+                    <a href="8-drive-style.html">차량별 운전 스타일 확인</a>
+                    <button class="star_selected">★</button>
+                </td>
             </tr>
             <tr>
                 <td><img src="img/bag.png" alt="bag" class="bar-img"></td>
-                <td><a href="9-01drive-record.html">차량별 주행 기록 확인</a></td>
-                <td class="star">★</td>
+                <td>
+                    <a href="9-01drive-record.html">차량별 주행 기록 확인</a>
+                    <button class="star_selected">★</button>
+                </td>
             </tr>
         </table>
     </div>

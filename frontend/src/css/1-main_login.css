@@ -148,26 +148,30 @@ li{
     font-size: 23px;
     font-weight: 550;
     margin-left: 10%;
-    margin-bottom: -40px;
+    margin-bottom: 20px; /* 아이콘과 제목 사이 간격을 넓게 설정 */
+    z-index: 10; /* "자주 찾는 메뉴" 제목이 항상 위에 표시되도록 설정 */
 }
 
 .menu{
     width: 85%;
     margin-left: 7%;
-    display: table;
-    table-layout: fixed;
+    display: flex; /* flexbox 사용 */
+    justify-content: center; /* 아이템을 가운데 정렬 */
     text-align: center;
-    border-spacing: 50px;
+    flex-wrap: wrap; /* 아이템이 5개 이상이면 자동으로 다음 줄로 넘어가게 함 */
+    gap: 50px; /* 아이템 간 간격을 균등하게 설정 */
 }
 
 .menu-item{
     border-radius: 30px;
     background-color: #d8ecf7;
-    display: table-cell;
+    width: calc(100% / 6 - 20px); /* 5개 기준 너비 설정, 아이템 간 간격 포함 */
+    margin-bottom: 20px; /* 아이템 간 간격 */
+    box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
 }
 
 .menu-item img{
-    width: 35%;
+    width: 60px; /* 아이콘 크기 고정 */
     margin-top: 25px;
     margin-bottom: -10px;
 }

@@ -133,5 +133,15 @@ td a{
 
 .star{
     font-size: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.star_selected{
+    font-size: 20px;
     color: #ffd900;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
