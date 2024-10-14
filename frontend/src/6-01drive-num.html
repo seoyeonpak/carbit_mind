@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차량별 주행 횟수</title>
     <link rel="stylesheet" href="css/6-01drive-num.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/index.js"></script>
+    <script src="js/date_selection.js" defer></script>
 </head>
 <body>
     <!--header-->
@@ -41,25 +46,19 @@
         </a>
     </div>
 
-    <!--날짜-->
-    <div class="date">
-        <div class="date-nav">
-            <button class="slide-button">&lt;</button>
-            <span class="date-display">2024. 06. 28&nbsp;
-                <img src="img/date.png" alt="달력">
-            </span>
-            <button class="slide-button">&gt;</button>
-        </div>
-        
-        <div class="tab-menu">
-            <button class="tab-active">일간</button>
-            <a href="#">
-                <button class="tab">주간</button>
-            </a>
-            <a href="#">
-                <button class="tab">월간</button>
-            </a>
-        </div>
+    <!--날짜 및 옵션 선택-->
+    <div class="date-nav">
+        <button class="slide-button">&lt;</button>
+        <span class="date-display">&nbsp;</span>
+        <button class="calendar-button">
+            <img src="img/date.png" alt="달력">
+        </button>
+        <button class="slide-button">&gt;</button>
+    </div>
+    
+    <div class="tab-menu">
+        <button class="tab">일간</button>
+        <button class="tab">월간</button>
     </div>
 
     <!--결과창-->
