@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let jsonData = [];
 
-    // data2.json 파일에서 데이터 불러오기
-    fetch('data2.json')
+    // data3.json 파일에서 데이터 불러오기
+    fetch('data3.json')
         .then(response => response.json())
         .then(data => {
             jsonData = data; // 데이터를 전역 변수에 저장

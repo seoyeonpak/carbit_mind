@@ -73,23 +73,25 @@ header a{
 /*검색*/
 .serch{
     display: flex;
-    justify-content: space-around;
-    margin-right: 14em;
-    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
 }
 
 .serch p{
     font-size: 20px;
     font-weight: 545;
-    margin-left: 8em;
-    margin-top: 10px;
-    margin-right: 3em;
+}
+
+.search-box {
+    position: relative;
+    width: 70%;
 }
 
 input{
     border: 2px solid #a7cfe2;
     border-radius: 7px;
-    width: 100em;
+    width: 100%;
     height: 45px;
     text-align: center;
     color: #79a2df;
@@ -109,17 +111,27 @@ input:focus {outline:none;}  /*클릭 시 테두리 x*/
 
 /*자동완성내용*/
 .auto{
-    width: 70%;
+    width: 100%; /* 검색창과 동일한 너비 */
     font-size: 18px;
     text-align: center;
-    margin-left: 17%;
-    margin-top: -20px;
     background-color: #e0e0e0;
-    border-radius: 7px;
-    border: 1px solid rgb(92, 92, 92);
-    padding: 14px 0;
     z-index: 3;
-    position: relative;
+    position: absolute;
+    top: 100%; /* 검색창 바로 아래에 붙도록 설정 */
+    left: 0;
+}
+
+.autocomplete-items {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    width: 100%;
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    list-style-type: none; /* 점을 제거 */
+    padding-left: 0; /* 리스트 왼쪽 여백을 제거 */
+    margin: 0;
 }
 
 .auto a{
@@ -131,12 +143,38 @@ input:focus {outline:none;}  /*클릭 시 테두리 x*/
     color: #d8d8d8;
 }
 
-/*결과창*/
-.result{
-    padding: 21em 0;
-    margin: -80px 10em;
+/* 결과창 */
+.result {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1em;
+    margin: 1em auto; /* 좌우 자동으로 가운데 정렬 */
+    width: 75%; /* 너비를 화면 비율로 설정 */
     border-radius: 10px;
     border: 1px solid #383838;
-    z-index: 1;
+    background-color: #ffffff;
+    height: 600px;
     position: relative;
+    z-index: 1;
+}
+
+.running{
+    font-weight: 550;
+    color: #58aae0;
+}
+
+.not-running{
+    font-weight: 550;
+    color: #e05858;
+}
+
+.text{
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    padding: -20px;
+    margin: 0 12em;
+    margin-top: -10px;
+    margin-bottom: -22px;
 }

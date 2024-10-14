@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "driver_name": "이승훈",
+    "veh_number": "12가1234",
+    "origin": "서울시 강남구",
+    "arrive": "서울시 종로구",
+    "latitude": 35.888505,
+    "longitude": 128.610006,
+    "origin_time": "08:30:00",
+    "arrive_time": "09:00:00",
+    "veh_totalkm": "20km",
+    "veh_date": "2024-10-01",
+    "reg_date": "2024-10-01 08:00:00",
+    "mod_date": "2024-10-01 08:30:00"
+  },
+  {
+    "id": 2,
+    "driver_name": "박서연",
+    "veh_number": "11가4321",
+    "origin": "부산시 해운대구",
+    "arrive": "부산시 남구",
+    "latitude": 35.889355,
+    "longitude": 128.612905,
+    "origin_time": "10:15:00",
+    "arrive_time": "10:45:00",
+    "veh_totalkm": "15km",
+    "veh_date": "2024-10-02",
+    "reg_date": "2024-10-02 10:00:00",
+    "mod_date": "2024-10-02 10:30:00"
+  },
+  {
+    "id": 3,
+    "driver_name": "김민정",
+    "veh_number": "23가9876",
+    "origin": "대구시 중구",
+    "arrive": "대구시 북구",
+    "latitude": 35.891191,
+    "longitude": 128.606568,
+    "origin_time": "12:00:00",
+    "arrive_time": "12:30:00",
+    "veh_totalkm": "10km",
+    "veh_date": "2024-10-03",
+    "reg_date": "2024-10-03 11:45:00",
+    "mod_date": "2024-10-03 12:15:00"
+  }
+]
