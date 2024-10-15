@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/style.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/index.js"></script>
-    <script src="js/date_selection.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="js/chart_display.js"></script>
 </head>
 <body>
     <!--header-->
@@ -39,14 +42,16 @@
 
     <!--검색-->
     <div class="serch">
-        <p>차량번호</p>
-        <input type="text" name="serch" id="serch" placeholder="11가 1234">
-        <a href="6-01drive-num.html">
-            <img src="img/serch.png" alt="검색" class="serch-img">
-        </a>
+        <p>차량번호 검색</p>
+        <div class="serch-container">  
+            <input type="text" name="serch" id="serch" placeholder="11가 1234">
+            <button class="serch-button">
+                <img src="img/serch.png" alt="검색" class="serch-img">
+            </button>
+        </div>
     </div>
 
-    <!--날짜 및 옵션 선택-->
+    <!--날짜-->
     <div class="date-nav">
         <button class="slide-button">&lt;</button>
         <span class="date-display">&nbsp;</span>
@@ -55,28 +60,43 @@
         </button>
         <button class="slide-button">&gt;</button>
     </div>
-    
-    <div class="tab-menu">
-        <button class="tab">일간</button>
-        <button class="tab">월간</button>
-    </div>
 
-    <!--결과창-->
-    <div class="result">
-        <div class="select">
-            <div class="check">
-                <span class="step-icon">✔</span>
-            </div>
-            </a>
-            <p>차트</p>
-            <a href="6-02drive-num.html">
-                <div class="no-check">
-                    <span class="step-icon">✔</span>
-                </div>
-            </a>
-            <p>표</p>
+    <div class="tab-and-result-container">
+        <!--일간 & 월간 옵션-->
+        <div class="tab-menu">
+            <button class="tab" data-type="daily">일간</button>
+            <button class="tab" data-type="monthly">월간</button>
         </div>
-        <img src="img/chart.png" alt="chart" class="chart">
+
+        <!--결과창-->
+        <div class="result">
+            <div class="select">
+                <button id="chartButton">
+                    <span class="step-icon">✔</span>
+                </button>
+                <p>차트</p>
+                <button id="tableButton">
+                    <span class="step-icon">✔</span>
+                </button>
+                <p>표</p>
+            </div>
+
+            <!--차트-->
+            <canvas id="driveChart"></canvas>
+            
+            <!--표 추가-->
+            <table id="driveTable" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>날짜</th>
+                        <th>주행 횟수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--데이터 동적 추가-->
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>
