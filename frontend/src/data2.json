@@ -1,6 +1,7 @@
 [
     {
         "car_number": "11가 1234",
+        "car_model": "Hyundai Sonata",
         "origin_lat": 37.5665,
         "origin_lng": 126.9780,
         "arrive_lat": 37.5796,
@@ -13,12 +14,14 @@
     },
     {
         "car_number": "12나 2345",
+        "car_model": "Kia K5",
         "current_lat": 35.1796,
         "current_lng": 129.0756,
         "status": "운행 중 아님"
     },
     {
         "car_number": "13다 3456",
+        "car_model": "Hyundai Tucson",
         "origin_lat": 37.4563,
         "origin_lng": 126.7052,
         "arrive_lat": 37.4693,
@@ -31,12 +34,14 @@
     },
     {
         "car_number": "14라 4567",
+        "car_model": "Chevrolet Spark",
         "current_lat": 35.1550,
         "current_lng": 126.8530,
         "status": "운행 중 아님"
     },
     {
         "car_number": "15마 5678",
+        "car_model": "Genesis G80",
         "origin_lat": 36.3504,
         "origin_lng": 127.3845,
         "arrive_lat": 36.3210,
@@ -49,12 +54,14 @@
     },
     {
         "car_number": "16바 6789",
+        "car_model": "Kia Sorento",
         "current_lat": 35.8714,
         "current_lng": 128.6014,
         "status": "운행 중 아님"
     },
     {
         "car_number": "17사 7890",
+        "car_model": "Hyundai Santa Fe",
         "origin_lat": 37.5665,
         "origin_lng": 126.9780,
         "arrive_lat": 37.5172,
@@ -67,12 +74,14 @@
     },
     {
         "car_number": "18아 8901",
+        "car_model": "SsangYong Tivoli",
         "current_lat": 35.1796,
         "current_lng": 129.0756,
         "status": "운행 중 아님"
     },
     {
         "car_number": "19자 9012",
+        "car_model": "Renault Samsung SM6",
         "origin_lat": 35.1796,
         "origin_lng": 126.9020,
         "arrive_lat": 35.1716,
@@ -85,12 +94,14 @@
     },
     {
         "car_number": "20차 0123",
+        "car_model": "Kia Morning",
         "current_lat": 36.6354,
         "current_lng": 127.4911,
         "status": "운행 중 아님"
     },
     {
         "car_number": "21카 1234",
+        "car_model": "Genesis G70",
         "origin_lat": 35.8714,
         "origin_lng": 128.6014,
         "arrive_lat": 35.8713,
@@ -103,12 +114,14 @@
     },
     {
         "car_number": "22타 2345",
+        "car_model": "Chevrolet Malibu",
         "current_lat": 37.5510,
         "current_lng": 126.9870,
         "status": "운행 중 아님"
     },
     {
         "car_number": "23파 3456",
+        "car_model": "Hyundai Ioniq 5",
         "origin_lat": 35.8250,
         "origin_lng": 128.7415,
         "arrive_lat": 35.8523,
@@ -121,12 +134,14 @@
     },
     {
         "car_number": "24하 4567",
+        "car_model": "Kia Stinger",
         "current_lat": 36.6280,
         "current_lng": 127.4560,
         "status": "운행 중 아님"
     },
     {
         "car_number": "25가 5678",
+        "car_model": "Hyundai Avante",
         "origin_lat": 35.1796,
         "origin_lng": 129.0756,
         "arrive_lat": 35.1875,
@@ -139,12 +154,14 @@
     },
     {
         "car_number": "26나 6789",
+        "car_model": "Chevrolet Equinox",
         "current_lat": 35.8714,
         "current_lng": 128.6014,
         "status": "운행 중 아님"
     },
     {
         "car_number": "27다 7890",
+        "car_model": "Kia K7",
         "origin_lat": 37.4563,
         "origin_lng": 126.7052,
         "arrive_lat": 37.4815,
@@ -157,12 +174,14 @@
     },
     {
         "car_number": "28라 8901",
+        "car_model": "Hyundai Palisade",
         "current_lat": 35.1550,
         "current_lng": 126.8530,
         "status": "운행 중 아님"
     },
     {
         "car_number": "29마 9012",
+        "car_model": "Hyundai Venue",
         "origin_lat": 37.4563,
         "origin_lng": 126.7052,
         "arrive_lat": 37.4593,
@@ -175,6 +194,7 @@
     },
     {
         "car_number": "30바 0123",
+        "car_model": "Kia Carnival",
         "current_lat": 36.3504,
         "current_lng": 127.3845,
         "status": "운행 중 아님"

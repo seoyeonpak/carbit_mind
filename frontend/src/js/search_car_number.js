@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             filteredData.forEach(item => {
                 const listItem = document.createElement('li');
-                listItem.textContent = `${item.car_number}`;
+                listItem.textContent = `${item.car_number} (${item.car_model})`;
                 listItem.classList.add('autocomplete-item');
                 listItem.addEventListener('click', function () {
                     selectVehicle(item);
