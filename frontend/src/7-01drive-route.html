@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차량별 운전 경로 확인</title>
     <link rel="stylesheet" href="css/7-01drive-route.css">
+    <script src="js/drive_route.js" defer></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3b6e8ec9308b61a30edd3ff31150fa19"></script>
 </head>
 <body>
     <!--header-->
@@ -36,7 +38,7 @@
     <div class="serch">
         <p>차량번호</p>
         <input type="text" name="serch" id="serch" placeholder="11가 1234">
-        <a href="7-01drive-route.html">
+        <a href="javascript:void(0);">
             <img src="img/serch.png" alt="검색" class="serch-img">
         </a>
     </div>
@@ -52,43 +54,20 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>대구 북구 대학로 80, 경북대학교</td>
-                <td>대구 동구 동대구로 550 동대구역</td>
-                <td><a href="7-02drive-route.html">지도</a></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>대구 북구 호암로 51, 대구삼성창조캠퍼스</td>
-                <td>대구 동구 동대구로 550 동대구역</td>
-                <td><a href="7-02drive-route.html">지도</a></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>대구 서구 와룡로 527, 서대구역</td>
-                <td>대구 동구 동대구로 550 동대구역</td>
-                <td><a href="7-02drive-route.html">지도</a></td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>대구 중구 달구벌대로 2077, 더현대대구</td>
-                <td>대구 동구 동대구로 550 동대구역</td>
-                <td><a href="7-02drive-route.html">지도</a></td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>대구 달서구 두류공원로 200, 이월드</td>
-                <td>대구 동구 동대구로 550 동대구역</td>
-                <td><a href="7-02drive-route.html">지도</a></td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>대구 남구 얼배로 496, 대구서부정류장</td>
-                <td>대구 동구 동대구로 550 동대구역</td>
-                <td><a href="7-02drive-route.html">지도</a></td>
-            </tr>
+            <!-- 차량 데이터는 JavaScript로 동적으로 채워짐 -->
         </tbody>
     </table>
+
+    <!-- 팝업 창 -->
+    <div id="map-popup" class="popup hidden">
+        <div class="popup-header">
+            <h2>운전 경로 지도</h2>
+            <span id="close-popup" class="close-btn">X</span>
+        </div>
+        <div id="map" style="width: 100%; height: 400px;"></div>
+    </div>
+
+    <div id="overlay" class="overlay hidden"></div>
+
 </body>
 </html>
