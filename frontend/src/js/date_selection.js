@@ -1,86 +1,107 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // 달력 버튼과 날짜 텍스트 선택
-    const calendarButton = document.querySelector(".calendar-button");
-    const dateDisplay = document.querySelector(".date-display");
-    const dailyTab = document.querySelector('.tab:nth-child(1)');
-    const monthlyTab = document.querySelector('.tab:nth-child(2)');
+document.addEventListener('DOMContentLoaded', function () {
+    const dateDisplay = document.querySelector('.date-display'); // 선택한 날짜 표시하는 엘리먼트
+    const slideButtons = document.querySelectorAll('.slide-button'); // 슬라이드 버튼
+    const tabs = document.querySelectorAll('.tab'); // 일간/월간 탭
+    let selectedDate = new Date(); // 기본값은 오늘 날짜
+    let datePicker; // 달력 인스턴스
+    let chartType = 'daily'; // 기본값은 일간 모드
 
-    // 오늘 날짜를 기본값으로 설정
-    const today = new Date();
-    const formattedToday = today.toLocaleDateString('ko-KR', {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit'
-    }).replace(/\./g, '').trim().replace(/\s/g, '. ');
+    // 초기에 일간 탭 활성화
+    document.querySelector('[data-type="daily"]').classList.add('tab-active');
 
-    // 오늘의 월 (연.월) 포맷으로 설정
-    const formattedMonth = today.toLocaleDateString('ko-KR', {
-        year: 'numeric',
-        month: '2-digit',
-    }).replace(/\./g, '').trim().replace(/\s/g, '. ');
+    // 페이지 로드 시 초기 날짜 설정을 위한 함수
+    function setInitialDate() {
+        const today = new Date();
+        selectedDate = new Date(today.getFullYear(), today.getMonth(), today.getDate()); // 오늘 날짜 설정
+    }
 
-    // 페이지 로드 시 오늘 날짜 표시 (일간 모드 기본)
-    dateDisplay.textContent = formattedToday;
+    // 초기 페이지 로드 시 날짜 설정
+    setInitialDate(); // 오늘 날짜로 초기화
+    updateSelectedDateDisplay();
+    initializeDatePicker();
 
-    // 일간 모드를 기본으로 설정하고, 탭 활성화
-    dailyTab.classList.add('tab-active');
-    
-    // Flatpickr 달력 인스턴스 생성 (일간 모드 기본 설정)
-    let datePicker = flatpickr(calendarButton, {
-        dateFormat: "Y. m. d", // 일간 달력의 날짜 포맷
-        defaultDate: today, // 기본값으로 오늘 날짜 설정
-        onChange: function(selectedDates, dateStr, instance) {
-            dateDisplay.textContent = dateStr; // 선택된 날짜로 텍스트 업데이트
+    // 선택된 날짜를 표시하는 함수
+    function updateSelectedDateDisplay() {
+        if (chartType === 'daily') {
+            const formattedDate = selectedDate.toLocaleDateString('ko-KR', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit'
+            }).replace(/\./g, '').replace(/\s/g, '. ').trim() + ".";
+            dateDisplay.textContent = formattedDate;
+        } else if (chartType === 'monthly') {
+            const yearMonth = selectedDate.toLocaleDateString('ko-KR', {
+                year: 'numeric',
+                month: '2-digit'
+            }).replace(/\./g, '').replace(/\s/g, '. ').trim() + ".";
+            dateDisplay.textContent = yearMonth;
         }
-    });
+    }
 
-    // 일간 탭을 클릭하면 일간 모드로 달력 설정
-    dailyTab.addEventListener('click', function() {
-        dailyTab.classList.add('tab-active');
-        monthlyTab.classList.remove('tab-active');
-        datePicker.destroy(); // 기존 인스턴스를 제거
+    // Flatpickr 설정 (달력 선택) - 한국어로 달력 표시
+    function initializeDatePicker() {
+        if (datePicker) {
+            datePicker.destroy(); // 기존 달력 인스턴스 제거
+        }
 
-        // 일간 모드로 다시 생성
-        datePicker = flatpickr(calendarButton, {
-            dateFormat: "Y. m. d", // 일간 날짜 포맷
-            defaultDate: today, // 오늘 날짜를 기본값으로
-            onChange: function(selectedDates, dateStr, instance) {
-                dateDisplay.textContent = dateStr; // 선택된 날짜로 텍스트 업데이트
+        const flatpickrOptions = {
+            locale: 'ko', // 달력 언어를 한국어로 설정
+            defaultDate: selectedDate,
+            onChange: function (selectedDates) {
+                selectedDate = new Date(selectedDates[0]); // 선택된 날짜로 업데이트
+                updateSelectedDateDisplay();
             }
-        });
+        };
 
-        // 일간 모드로 변경 시 오늘 날짜 표시
-        dateDisplay.textContent = formattedToday;
-    });
+        if (chartType === 'daily') {
+            datePicker = flatpickr(".calendar-button", {
+                ...flatpickrOptions,
+                dateFormat: "Y. m. d",
+            });
+        } else if (chartType === 'monthly') {
+            datePicker = flatpickr(".calendar-button", {
+                ...flatpickrOptions,
+                plugins: [new monthSelectPlugin()],
+                dateFormat: "Y. m",
+                onChange: function (selectedDates) {
+                    selectedDate = new Date(selectedDates[0]);
+                    selectedDate.setDate(1); // 월간은 해당 월의 첫날로 설정
+                    updateSelectedDateDisplay(); // 선택된 월을 표시
+                }
+            });
+        }
+    }
 
-    // 월간 탭을 클릭하면 월간 모드로 달력 설정
-    monthlyTab.addEventListener('click', function() {
-        monthlyTab.classList.add('tab-active');
-        dailyTab.classList.remove('tab-active');
-        datePicker.destroy(); // 기존 인스턴스를 제거
+    // 슬라이드 버튼 이벤트 처리
+    slideButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const direction = this.textContent === '<' ? -1 : 1;
 
-        // 월간 모드로 다시 생성 (monthSelect 플러그인 사용)
-        datePicker = flatpickr(calendarButton, {
-            dateFormat: "Y. m", // 연월 포맷
-            defaultDate: today, // 오늘의 연월을 기본값으로
-            plugins: [
-                new monthSelectPlugin({
-                    shorthand: true, // 짧은 월 이름 사용 (e.g., Jan, Feb)
-                    dateFormat: "Y. m", // 연월 포맷
-                    altFormat: "F Y", // 보기 편한 포맷 (January 2024)
-                })
-            ],
-            onChange: function(selectedDates, dateStr, instance) {
-                dateDisplay.textContent = dateStr; // 선택된 연월로 텍스트 업데이트
+            if (chartType === 'daily') {
+                selectedDate.setDate(selectedDate.getDate() + direction); // 하루씩 이동
+            } else if (chartType === 'monthly') {
+                selectedDate.setMonth(selectedDate.getMonth() + direction); // 한 달씩 이동
+                selectedDate.setDate(1); // 월간은 해당 월의 첫날로 설정
             }
+
+            updateSelectedDateDisplay();
+            datePicker.setDate(selectedDate, true); // 달력에도 날짜 반영 (동기화)
         });
-
-        // 월간 모드로 변경 시 현재 월 표시
-        dateDisplay.textContent = formattedMonth;
     });
 
-    // 달력 버튼을 눌렀을 때 달력을 엽니다
-    calendarButton.addEventListener("click", function() {
-        datePicker.open(); // 달력 열기
+    // 탭 클릭 이벤트 처리 (일간/월간 전환)
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+            tabs.forEach(t => t.classList.remove('tab-active')); // 모든 탭 비활성화
+            this.classList.add('tab-active'); // 클릭한 탭 활성화
+
+            chartType = this.dataset.type === 'daily' ? 'daily' : 'monthly'; // 탭에 따라 타입 변경
+            setInitialDate(); // 탭 전환 시 오늘 날짜로 초기화
+            updateSelectedDateDisplay(); // 날짜 표시 업데이트
+            initializeDatePicker(); // 달력 설정 재초기화
+        });
     });
+
+    // 초기화 실행
+    setInitialDate(); // 초기 페이지 로드 시 오늘 날짜로 설정
 });

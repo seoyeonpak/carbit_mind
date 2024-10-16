@@ -8,16 +8,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/style.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/index.js"></script>
-    <script src="js/date_selection.js" defer></script>
     <script src="js/search_feature.js" defer></script>
 </head>
 <body>
-    <!--header-->
     <header>
-        <a href="2-menubar.html">
-            <p>≡</p>
-        </a>
+        <a href="2-menubar.html"><p>≡</p></a>
         <a href="1-main_login.html">
             <img src="img/logo.png" alt="아이커넥트" class="logo">
         </a>
@@ -31,14 +28,10 @@
         </div>
     </header>
 
-    <!--운행 순위 확인-->
     <div class="drive_rank">
-        <div class="title">
-            <p>운행 순위 확인</p>
-        </div>
+        <div class="title"><p>운행 순위 확인</p></div>
     </div>
-   
-    <!--날짜 및 옵션 선택-->
+
     <div class="date-nav">
         <button class="slide-button">&lt;</button>
         <span class="date-display">&nbsp;</span>
@@ -47,13 +40,12 @@
         </button>
         <button class="slide-button">&gt;</button>
     </div>
-    
+
     <div class="tab-menu">
-        <button class="tab">일간</button>
-        <button class="tab">월간</button>
+        <button class="tab" data-type="daily">일간</button>
+        <button class="tab" data-type="monthly">월간</button>
     </div>
 
-    <!--검색-->
     <div class="serch">
         <input type="text" name="serch" id="serch" placeholder="검색">
         <button class="serch-button">
@@ -62,8 +54,7 @@
     </div>
 
     <br>
-    <!--순위표-->
-    <table>
+    <table id="driveTable">
         <thead>
             <tr>
                 <th class="rank">순위</th>
@@ -73,7 +64,7 @@
             </tr>
         </thead>
         <tbody>
-            <!-- 이 부분에 검색 결과가 렌더링됩니다 -->
+            <!-- 검색 결과 렌더링 -->
         </tbody>
     </table>
 </body>
